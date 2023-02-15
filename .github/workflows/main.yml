@@ -6,8 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+      - uses: shivammathur/setup-php@v2
+      - run: composer install --no-progress --prefer-dist
+      - run: vendor/bin/tester tests -s -C
+
