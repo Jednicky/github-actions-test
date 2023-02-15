@@ -16,6 +16,11 @@ class RectangleTest extends Tester\TestCase
 	{
 		Assert::same('a', 'a');
 	}
+
+	public function testFail()
+	{
+		Assert::same('a', 'b');
+	}
 }
 
 # Run testing methods
